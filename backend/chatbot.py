@@ -3,8 +3,8 @@ import os
 
 # Securely load the API key from the environment
 # set opne ai key as enviorment variable so I dont have to hard code it 
-openai.api_key = os.getenv("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")
-
+# i made my api key an enviormental variable so i dont have to hard code it
+openai.api_key = os.getenv("OPENAI_API_KEY")
 def chat_with_hendrix(prompt):
     try:
         #accesing librabry 
