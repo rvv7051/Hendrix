@@ -4,6 +4,7 @@ import os
 
 
 app = Flask(__name__)
+
 # Securely load the API key from the environment
 # set opne ai key as enviorment variable so I dont have to hard code it 
 # i made my api key an enviormental variable so i dont have to hard code it
@@ -20,6 +21,12 @@ def chat_with_hendrix():
         return jsonify({"message":response.choices[0].message['content'].strip()})
     except Exception as e:
         return f"An error occurred: {e}"
+    
+@app.route('/api/test', methods=['GET'])
+def test():
+    print("Hello World")
+    return jsonify({"message":"Hello World"})
+
 
 if __name__ == "__main__":
     #while True:
