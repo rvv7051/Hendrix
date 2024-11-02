@@ -8,7 +8,6 @@ app = Flask(__name__)
 # set opne ai key as enviorment variable so I dont have to hard code it 
 # i made my api key an enviormental variable so i dont have to hard code it
 openai.api_key = os.getenv("OPENAI_API_KEY")
-#openai.api_key = ("sk-proj-NxPprzCYSs_NYxsaIMejN2yUkE3b2p3bsy9YQW08Gp0oxqsSRNMMVdMm20mP20P2uDjC9nKlzrT3BlbkFJWo2dYzx9xM1lauhA5OD3M6A21Ib0J2J91VAebRrgHJ1_eqpPTavcUa2a7mz8ip53K4O95TOhEA_=/usr/bin/env")
 @app.route('/api/chat_with_hendrix', methods=['GET'])
 def chat_with_hendrix():
     try:
