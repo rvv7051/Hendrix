@@ -1,0 +1,6 @@
+version: 0.0.1
+patterns:
+  - name: github.com/getgrit/stdlib#*
+api_keys:
+  openai: "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
+_=/usr/bin/env"
