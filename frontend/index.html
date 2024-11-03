@@ -29,18 +29,47 @@
                 </button>
                 <br><br><br>
                 <output id="output" for="a"></output>
+                
                 <script>
+                    // Capture "Enter" key press for sending input
                     var input = document.getElementById("a");
                     input.addEventListener("keypress", function(event) {
-                    if (event.key === "Enter") {
-                        event.preventDefault();
-                        document.getElementById("inputBtn").click();
-                    }
+                        if (event.key === "Enter") {
+                            event.preventDefault();
+                            document.getElementById("inputBtn").click();
+                        }
                     });
 
-                    function myFunction(){
-                        const textarea = document.getElementById("output");
-                        textarea.value = document.getElementById("a").value;
+                    async function myFunction() {
+                        const question = document.getElementById("a").value;
+                        const output = document.getElementById("output");
+
+                        // Clear output and check if input is provided
+                        output.innerText = "";  
+                        if (!question) {
+                            alert("Please enter a question.");
+                            return;
+                        }
+
+                        try {
+                            // Fetch response from the backend API
+                            const response = await fetch(`http://127.0.0.1:5005/api/chat_with_hendrix?prompt=${encodeURIComponent(question)}`, {
+                                method: 'GET'
+                            });
+
+                            // Check if the response is okay
+                            if (!response.ok) {
+                                throw new Error(`Error: ${response.status} ${response.statusText}`);
+                            }
+
+                            const data = await response.json();
+                            // Display the response message from the backend
+                            output.innerText = data.message;
+
+                        } catch (error) {
+                            console.error("Error fetching response:", error);
+                            output.innerText = "An error occurred: " + error.message;
+                        }
                     }
                 </script>
                 
