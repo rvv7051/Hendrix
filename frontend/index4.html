@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hendrix the Chatbot Welcomes you</title>
+</head>
+<body>
+    <h1>How can Hendrix help?</h1>
+    <input type="text" id="textInput" placeholder="Type something...">
+    <button onclick="submitInput()">Submit</button>
+    <p id="displayArea"></p>
+ 
+
+    <script>
+        function submitInput() {
+            const input = document.getElementById('textInput').value;
+            //const baseUrl = 'http://127.0.0.1:5000/api/chat_with_hendrix';
+           // const params = new URLSearchParams({
+            //    prompt: input
+           // });
+            //const urlWithParams = `${baseUrl}?${params.toString()}`;
+           // const response = await fetch(urlWithParams,{method:'GET'});
+           // const data = await response.json();
+           // const msg = data.message;
+            document.getElementById('displayArea').innerText = `${input}`;
+        }
+    </script>
+</body>
+</html>

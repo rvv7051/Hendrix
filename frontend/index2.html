@@ -22,13 +22,13 @@
         <div id="input">
             <br><br><br>
             <input type="text" id="a" placeholder="Enter Question Here">
-            <button id="inputBtn" onclick="submitSimpleInput()" aria-label="Send Message">
+            <button id="inputBtn" onclick="submitInput()" aria-label="Send Message">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M208.49,120.49a12,12,0,0,1-17,0L140,69V216a12,12,0,0,1-24,0V69L64.49,120.49a12,12,0,0,1-17-17l72-72a12,12,0,0,1,17,0l72,72A12,12,0,0,1,208.49,120.49Z"></path>
                 </svg>
             </button>
             <br><br><br>
-            <p id="displayArea"></p>
+            <output id="output" for="a"></output>
             
             <script>
                 // Capture "Enter" key press for sending input
@@ -39,16 +39,6 @@
                         document.getElementById("inputBtn").click();
                     }
                 });
-                async function submitSimpleInput() {
-                    const input = document.getElementById('a').value;
-                    document.getElementById('displayArea').innerText = `loading...`;
-                    const baseUrl = 'http://127.0.0.1:5005/api/chat_with_hendrix';
-                    const params = new URLSearchParams({prompt:input});
-                    const urlWithParams = `${baseUrl}?${params.toString()}`;
-                    const response = await fetch(urlWithParams,{method:'GET'});
-                    const data = await response.json();
-                    document.getElementById('displayArea').innerText = `${data.message}`;
-                }
 
                 async function submitInput() {
                     const question = document.getElementById("a").value;
