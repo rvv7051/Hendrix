@@ -1,0 +1,115 @@
+body{
+    //background: rgb(124,124,124);
+    //background: linear-gradient(-90deg, rgba(124,124,124,1) 0%, rgba(49,95,20,1) 100%);
+    background:rgb(20,20,20);
+}
+
+h1{
+    color:aliceblue;
+    font-family: "Audiowide", sans-serif;
+    font-size:2.8em;
+    margin-top:-2px;
+    margin-left: 3px;
+}
+
+a{
+    text-decoration:none;
+    color:aliceblue;
+}
+
+p{
+    color:green;
+}
+
+footer{
+    position:absolute;
+    font-family: "Lucida Console", "Courier New", monospace;
+    bottom:2%;
+}
+
+#a{
+    width:400px;
+    height:40px;
+    border: 2px black;
+    border-radius:10px; 
+}
+
+#startMsg{
+    color:aliceblue;
+    position:absolute;
+    text-align:center;
+    font-family: "Audiowide", sans-serif;
+    font-size:2em;
+    left:37%;
+
+}
+#startTips{
+    position:absolute;
+    color:aliceblue;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding-top:100px;
+    padding-right:20px;
+    padding-left:20px;
+    background-color:rgb(30,30,30);
+    left:32.5%;
+    top:23%;
+    width:500px;
+    height:200px;
+    opacity:40%;
+    border: 2px black;
+    border-radius: 10px;
+    z-index:-1;
+
+}
+
+#input{
+    position:absolute;
+    text-align:center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    top:50%;
+    left:35%;
+}
+
+#inputBtn{
+    background-color:rgb(30,30,30);
+    border-radius:10px;
+    height:40px;
+    width:40px;
+
+}
+
+#output{
+    color:aliceblue;
+    left:35%;
+}
+
+#startMsgBg{
+    position:absolute;
+    background-color:black;
+    left:25%;
+    width:750px;
+    height:500px;
+    opacity:40%;
+    border: 2px black;
+    border-radius: 10px;
+    z-index:-1;
+}
+
+#pfp{
+    position:absolute;
+    right:0.5%;
+    top:1%;
+    width:50px;
+    height:50px;
+}
+
+
+
+#professor{
+    position:absolute;
+    left:20%;
+    bottom:15%;
+    width:235px;
+    height:180px;
+}
+
